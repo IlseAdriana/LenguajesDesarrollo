@@ -16,8 +16,8 @@ public class Main {
             System.arraycopy(arrPuntos, i * datosXhilo, matrizPuntos[i], 0, datosXhilo);
         }
 
-        /* Crear los objetos base y asignar éstos a un nuevo hilo, 
-            el cual pertenece a un ThreadGroup*/
+        /* Crear los objetos base, asociarlos a un nuevo hilo, 
+            el cual pertenece a un ThreadGroup, y ejecutarlos*/
         Punto2d[] arrObjsBase = new Punto2d[numHilos];
         
         ThreadGroup grupoHilos = new ThreadGroup("Hilos");
@@ -26,10 +26,6 @@ public class Main {
         for (int i = 0; i < numHilos; i++) {
             arrObjsBase[i] = new Punto2d(matrizPuntos[i]);
             arrHilos[i] = new Thread(grupoHilos, arrObjsBase[i]);
-        }
-
-        /* Ejecutar los hilos */
-        for (int i = 0; i < arrHilos.length; i++) {
             arrHilos[i].start();
         }
 
