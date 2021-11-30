@@ -1,4 +1,4 @@
-/* Árbol genealógico de los simpsons */
+% Árbol genealógico de los simpsons
 
 mujer(mona).
 mujer(jackie).
